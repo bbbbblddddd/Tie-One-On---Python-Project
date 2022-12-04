@@ -5,7 +5,7 @@ from models.cocktail import Cocktail
 
 def save(cocktail):
     sql = "INSERT INTO cocktails(name, description, instructions) VALUES ( %s, %s, %s ) RETURNING id"
-    values = [cocktail.name, cocktail.description, cocktail.instruction]
+    values = [cocktail.name, cocktail.description, cocktail.instructions]
     results = run_sql( sql, values )
     cocktail.id = results[0]['id']
     return cocktail

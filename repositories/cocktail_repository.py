@@ -27,8 +27,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        cocktails = Cocktail(result['name'], result ['description'], result['instructions'], result['id'])
-        return cocktails
+        cocktail = Cocktail(result['name'], result ['description'], result['instructions'], result['id'])
+        return cocktail
 
 # def users(location):
 #     users = []
@@ -46,3 +46,8 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM cocktails"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM cocktails WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

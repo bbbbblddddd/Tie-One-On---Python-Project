@@ -1,15 +1,13 @@
 from flask import Flask, render_template
 
-# from controllers.
-# from controllers.
-# from controllers.
+from controllers.cocktail_controller import cocktails_blueprint
+from controllers.ingredient_controller import ingredients_blueprint
+
 
 app = Flask(__name__)
 
-# app.register_blueprint(cocktails_blueprint)
-# app.register_blueprint(ingredients_blueprint)
-# app.register_blueprint(cocktail_ingredient_blueprint)
-# app.register_blueprint(cocktail_quantity_blueprint)
+app.register_blueprint(cocktails_blueprint)
+app.register_blueprint(ingredients_blueprint)
 
 @app.route('/')
 def home():

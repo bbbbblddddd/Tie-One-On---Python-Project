@@ -6,4 +6,5 @@ class Cocktail:
         self.instructions = instructions
         self.id = id
         self.ingredients = []
-        self.quantitiy = []
+        # self.quantity = []
+

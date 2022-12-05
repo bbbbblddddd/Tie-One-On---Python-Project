@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 
 from models.cocktail import Cocktail
 from models.ingredient import Ingredient
+from models.cocktail_ingredient import Cocktail_ingredient
 
 import repositories.ingredient_repository as ingredient_repository
 import repositories.cocktail_repository as cocktail_repository
@@ -10,19 +11,32 @@ import repositories.cocktail_repository as cocktail_repository
 def save(cocktail_ingredient, cocktail):
     sql = "INSERT INTO cocktail_ingredient ( ingredient_id, cocktail_id ) VALUES ( %s, %s) RETURNING id"
     values = [cocktail_ingredient.id, cocktail.id]
-    results = run_sql( sql, values )
-    cocktail_ingredient.id = results[0]['id']
-    return cocktail_ingredient
+    run_sql( sql, values )
+    # cocktail_ingredient.id = results[0]['id']
+    # return cocktail_ingredient
 
 # def select(id):
-#     cocktail_ingredient = None
-#     sql = "SELECT * FROM cocktail_ingredients WHERE id = %s"
+
+
+# def select_cocktail(id):
+#     sql = "SELECT * FROM cocktail_ingredient WHERE id = %s"
 #     values = [id]
 #     result = run_sql(sql, values)[0]
 
 #     if result is not None:
 #         cocktail_ingredient = Cocktail(result['name'], result ['description'], result['instructions'], result['id'])
-#         return cocktail
+#         return cocktail_ingredient
+    
+def select_all_by_cocktail_id(id):
+    sql = "SELECT * FROM cocktail_ingredient WHERE cocktail_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    cocktail_ingredient_instances = []
+    for row in results:
+        cocktail_ingredient = Cocktail_ingredient(row['cocktail_id'], row['ingredient_id'])
+        cocktail_ingredient_instances.append(cocktail_ingredient)
+    return cocktail_ingredient_instances
+
 
 def select_all():
     cocktail_ingredients = []

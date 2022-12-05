@@ -15,7 +15,8 @@ def cocktails():
 
 @cocktails_blueprint.route("/cocktails/<id>", methods=['GET'])
 def show_cocktail(id):
-    cocktail = cocktail_ingredient_repository.select(id)
+    cocktail = cocktail_repository.select(id)
+    
     return render_template('cocktails/show.html', cocktail = cocktail)
 
 

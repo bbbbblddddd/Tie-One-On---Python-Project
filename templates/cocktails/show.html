@@ -1,9 +1,16 @@
-j {% extends 'base.html' %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 <div>
-    <p>{{cocktail.name}}</p>
-    <p>{{cocktail.decription}}</p>
-    <p>{{cocktail.instructions}}</p>
+    {{cocktail.name}}
+    {{cocktail.instructions}}
 </div>
 
+{% for item in cocktail.ingredients %}
+    <p>{{item.name}}</p>
+{% endfor %}
+
     
+{% endblock %}
+

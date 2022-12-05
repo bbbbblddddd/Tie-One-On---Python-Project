@@ -66,7 +66,7 @@ cocktail_ingredient_repository.save(angustura_bitters, manhattan)
  
 # is syntax above correct for joining tables together?
 
-all_ingredients_for_gimlet = cocktail_repository.ingredients(gimlet)
+# all_ingredients_for_gimlet = cocktail_repository.ingredients(gimlet)
 
 pdb.set_trace()
 

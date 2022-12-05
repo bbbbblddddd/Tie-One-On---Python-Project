@@ -4,4 +4,22 @@
 
 <h1>Tie One on</h1>
 
+<h2> What Ya Got?</h2>
+<div>
+    <label for="ingredient">Choose an ingredient you want to work with; </label>
+    <select id="ingredients" name="ingredient.name">
+
+    {% for ingredient in ingredients %}
+        <option value="'{{ingredients.name}}">{{ingredients.name}}</option>  
+    {% endfor %}
+    </select>
+
+    <button type="submit">Show Me What I can Make</button>
+
+</div>
+
+
+</select>
+</div>
+
 {% endblock content %}

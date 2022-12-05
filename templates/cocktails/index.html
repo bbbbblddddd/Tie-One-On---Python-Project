@@ -10,12 +10,10 @@
     <ul>
         <p> {{cocktail.name}}</p>
         <p>{{cocktail.description}}</p>
-        <p>{{cocktail.instructions}}</p>
-        <!-- <a href="cocktails/show.html"></a> -->
+        <li><a href="/cocktails/{{cocktail.id}}"> Take a Closer Look</a></li>
     </ul>
 </li>
 
 {% endfor %}
-
     
 {% endblock content%}

@@ -19,4 +19,8 @@ def show_cocktail(id):
     
     return render_template('cocktails/show.html', cocktail = cocktail)
 
+@cocktails_blueprint.route('/cocktails<id>/delete', methods=['POST'])
+def delete_cocktail(id):
+    cocktail_repository.delete(id)
+    return redirect('/cocktails')
 

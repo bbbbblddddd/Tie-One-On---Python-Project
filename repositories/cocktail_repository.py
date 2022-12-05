@@ -31,13 +31,13 @@ def select(id):
     result = run_sql(sql, values)[0]
     ingredients = cocktail_ingredient_repository.select_all_by_cocktail_id(id)
 
-    ingredient_instances = []
-    for item in ingredients:
-        found_ingredient = ingredient_repository.select(item.ingredient_id)
-        ingredient_instances.append(found_ingredient)
+    # ingredient_instances = []
+    # for item in ingredients:
+    #     found_ingredient = ingredient_repository.select(item.ingredient_id)
+    #     ingredient_instances.append(found_ingredient)
     if result is not None:
         cocktail = Cocktail(result['name'], result ['description'], result['instructions'], result['id'])
-    cocktail.ingredients = ingredient_instances
+    cocktail.ingredients = ingredients
     return cocktail
 
 def ingredients(cocktail):

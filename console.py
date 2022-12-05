@@ -11,14 +11,14 @@ cocktail_repository.delete_all()
 ingredient_repository.delete_all()
 cocktail_ingredient_repository.delete_all()
 
-cocktail1 = Cocktail('Gimlet', 'A lime-heavy, classic gin cocktail with a rich naval history and a sharp kick.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
-cocktail_repository.save(cocktail1)
+gimlet = Cocktail('Gimlet', 'A lime-heavy, classic gin cocktail with a rich naval history and a sharp kick.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
+cocktail_repository.save(gimlet)
 
-cocktail2 = Cocktail('Margerita', 'Combining the tang of lime and the sweetness of orange liqueur with the distinctive strength of tequila, the classic Margarita strikes all of the right keys.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
-cocktail_repository.save(cocktail2)
+margerita = Cocktail('Margerita', 'Combining the tang of lime and the sweetness of orange liqueur with the distinctive strength of tequila, the classic Margarita strikes all of the right keys.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
+cocktail_repository.save(margerita)
 
-cocktail3 = Cocktail('Manhattan', 'The Manhattan is a classic cocktail of choice for whiskey-lovers.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
-cocktail_repository.save(cocktail3)
+manhattan = Cocktail('Manhattan', 'The Manhattan is a classic cocktail of choice for whiskey-lovers.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
+cocktail_repository.save(manhattan)
 
 # could I rename these variable say... cocktail_gimlet, cocktail_margerita etc to make it more readable? Is this advised?
 # also what was the input in ordet to take a line during a string? My description TEXT field's are v.lomg and it makees it hard to navigate through + edit
@@ -49,16 +49,24 @@ ingredient_repository.save(angustura_bitters)
 
 
 
-gimlet = (cocktail1, gin, lime_juice, sugar_syrup)
-cocktail_ingredient_repository.save(gimlet)
+cocktail_ingredient_repository.save(sugar_syrup, gimlet)
+cocktail_ingredient_repository.save(gin, gimlet)
+cocktail_ingredient_repository.save(lime_juice,gimlet)
 
-margerita = (cocktail2, tequila, lime_juice, triple_sec, sugar_syrup)
-cocktail_ingredient_repository.save(margerita)
 
-manhattan = (cocktail3, bourbon, vermouth, angustura_bitters)
-cocktail_ingredient_repository.save(manhattan)
+cocktail_ingredient_repository.save(tequila, margerita)
+cocktail_ingredient_repository.save(lime_juice, margerita)
+cocktail_ingredient_repository.save(triple_sec, margerita)
+cocktail_ingredient_repository.save(sugar_syrup, margerita)
+
+cocktail_ingredient_repository.save(bourbon, manhattan)
+cocktail_ingredient_repository.save(vermouth, manhattan)
+cocktail_ingredient_repository.save(angustura_bitters, manhattan)
+
  
 # is syntax above correct for joining tables together?
+
+all_ingredients_for_gimlet = cocktail_repository.ingredients(gimlet)
 
 pdb.set_trace()
 

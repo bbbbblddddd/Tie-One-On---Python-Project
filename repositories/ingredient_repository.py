@@ -31,6 +31,17 @@ def select(id):
         ingredient = Ingredient(result['name'], result['id'] )
     return ingredient
 
+def cocktails(ingredient):
+    cocktail_ingredients = []
+    sql = "SELECT cocktails.* FROM cocktails INNER JOIN cocktail_ingredient ON cocktail_ingredient.cocktail_id = cocktails.id WHERE ingredient_id = %s "
+    values = [ingredient.id]
+    results = run_sql(sql,values)
+
+    for row in results:
+        cocktail = Cocktail (row['name'], row['description'], row['instructions'], row ['id'])
+        cocktail_ingredients.append(cocktail)
+    return cocktail_ingredients
+
 def delete_all():
     sql = "DELETE FROM ingredients"
     run_sql(sql)

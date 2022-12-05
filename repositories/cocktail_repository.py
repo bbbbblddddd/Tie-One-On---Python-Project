@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 
 from models.cocktail import Cocktail
+from models.ingredient import Ingredient
+
 
 
 def save(cocktail):
@@ -22,7 +24,7 @@ def select_all():
 
 def select(id):
     cocktail = None
-    sql = "SELECT * FROM cockatils WHERE id = %s"
+    sql = "SELECT * FROM cocktails WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
@@ -30,18 +32,16 @@ def select(id):
         cocktail = Cocktail(result['name'], result ['description'], result['instructions'], result['id'])
         return cocktail
 
-# def users(location):
-#     users = []
+def ingredients(cocktail):
+    cocktail_ingredients = []
+    sql = "SELECT ingredients.* FROM ingredients INNER JOIN cocktail_ingredient ON cocktail_ingredient.ingredient_id = ingredients.id WHERE cocktail_id = %s "
+    values = [cocktail.id]
+    results = run_sql(sql,values)
 
-#     sql = "SELECT users.* FROM users INNER JOIN visits ON visits.user_id = users.id WHERE location_id = %s"
-#     values = [location.id]
-#     results = run_sql(sql, values)
-
-#     for row in results:
-#         user = User(row['name'], row['id'])
-#         users.append(user)
-
-#     return users
+    for row in results:
+        ingredient = Ingredient (row['name'], row ['id'])
+        cocktail_ingredients.append(ingredient)
+    return cocktail_ingredients
 
 def delete_all():
     sql = "DELETE FROM cocktails"

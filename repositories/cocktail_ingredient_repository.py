@@ -7,12 +7,22 @@ import repositories.ingredient_repository as ingredient_repository
 import repositories.cocktail_repository as cocktail_repository
 
 
-def save(cocktail_ingredient):
+def save(cocktail_ingredient, cocktail):
     sql = "INSERT INTO cocktail_ingredient ( ingredient_id, cocktail_id ) VALUES ( %s, %s) RETURNING id"
-    values = [cocktail_ingredient.ingredient.id, cocktail_ingredient.cocktail.id]
+    values = [cocktail_ingredient.id, cocktail.id]
     results = run_sql( sql, values )
     cocktail_ingredient.id = results[0]['id']
     return cocktail_ingredient
+
+# def select(id):
+#     cocktail_ingredient = None
+#     sql = "SELECT * FROM cocktail_ingredients WHERE id = %s"
+#     values = [id]
+#     result = run_sql(sql, values)[0]
+
+#     if result is not None:
+#         cocktail_ingredient = Cocktail(result['name'], result ['description'], result['instructions'], result['id'])
+#         return cocktail
 
 def select_all():
     cocktail_ingredients = []

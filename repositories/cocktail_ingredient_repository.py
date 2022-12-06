@@ -9,7 +9,7 @@ import repositories.cocktail_repository as cocktail_repository
 
 def save(cocktail_ingredient, cocktail):
     sql = "INSERT INTO cocktail_ingredient ( ingredient_id, cocktail_id ) VALUES ( %s, %s) RETURNING id"
-    values = [cocktail_ingredient.id, cocktail.id]
+    values = [cocktail_ingredient, cocktail]
     run_sql( sql, values )
     
 def select_all_by_cocktail_id(id):

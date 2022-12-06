@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2> Add an ingredient</h2>
+
+<div>
+    <label for="ingredient"> What we've got </label>
+    <select id="ingredients" name="ingredient.name">
+
+    {% for ingredient in ingredients %}
+        <option value="'{{ingredient.id}}">{{ingredient.name}}</option>  
+    {% endfor %}
+    </select>
+</div>
+
+<form action ="/add_ingredient" method="post">
+    <label for="name_field"> Name of Ingredient </label>
+    <input type="text" name ="ingredient_name" id ="name_field">
+<button type="submit">Add Ingredient</button>
+</form>
+
+{% endblock content %}

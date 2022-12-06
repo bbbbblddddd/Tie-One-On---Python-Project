@@ -19,5 +19,3 @@ CREATE TABLE cocktail_ingredient(
     ingredient_id INT REFERENCES ingredients(id) ON DELETE CASCADE,
     cocktail_id INT REFERENCES cocktails(id) ON DELETE CASCADE
 );
-
-

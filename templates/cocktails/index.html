@@ -10,9 +10,13 @@
     <ul>
         <p> {{cocktail.name}}</p>
         <p>{{cocktail.description}}</p>
-        <li><a href="/cocktails/{{cocktail.id}}"> Take a Closer Look</a></li>
+        <li><a href="/cocktails/{{cocktail.id}}"> Take a Closer Look</a></li>        
+        <form class="delete-form" action="/cocktails/{{cocktail.id}}/delete" method="post">
+            <input type="submit" value="delete">
+        </form>   
     </ul>
 </li>
+
 
 {% endfor %}
     

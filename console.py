@@ -49,19 +49,19 @@ ingredient_repository.save(angustura_bitters)
 
 
 
-cocktail_ingredient_repository.save(sugar_syrup, gimlet)
-cocktail_ingredient_repository.save(gin, gimlet)
-cocktail_ingredient_repository.save(lime_juice,gimlet)
+cocktail_ingredient_repository.save(sugar_syrup.id, gimlet.id)
+cocktail_ingredient_repository.save(gin.id, gimlet.id)
+cocktail_ingredient_repository.save(lime_juice.id,gimlet.id)
 
 
-cocktail_ingredient_repository.save(tequila, margerita)
-cocktail_ingredient_repository.save(lime_juice, margerita)
-cocktail_ingredient_repository.save(triple_sec, margerita)
-cocktail_ingredient_repository.save(sugar_syrup, margerita)
+cocktail_ingredient_repository.save(tequila.id, margerita.id)
+cocktail_ingredient_repository.save(lime_juice.id, margerita.id)
+cocktail_ingredient_repository.save(triple_sec.id, margerita.id)
+cocktail_ingredient_repository.save(sugar_syrup.id, margerita.id)
 
-cocktail_ingredient_repository.save(bourbon, manhattan)
-cocktail_ingredient_repository.save(vermouth, manhattan)
-cocktail_ingredient_repository.save(angustura_bitters, manhattan)
+cocktail_ingredient_repository.save(bourbon.id, manhattan.id)
+cocktail_ingredient_repository.save(vermouth.id, manhattan.id)
+cocktail_ingredient_repository.save(angustura_bitters.id, manhattan.id)
 
  
 # is syntax above correct for joining tables together?

@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
     <title>Tie One On</title>
 </head>
    
 <body>
 
-    <main class="flex flex--row">
+    <main class="header">
         <nav>
           <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
             <li>
               <a href="/cocktails">All Cocktails</a>
             </li>
@@ -23,9 +30,6 @@
             </li>
             <li>
               <a href="/submit">Submit Your Own</a>
-            </li>
-            <li>
-              <a href="/">Home</a>
             </li>
           </ul>
         </nav>

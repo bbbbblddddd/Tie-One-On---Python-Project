@@ -5,8 +5,15 @@ from models.ingredient import Ingredient
 
 import repositories.ingredient_repository as ingredient_repository
 import repositories.cocktail_repository as cocktail_repository
+import repositories.cocktail_ingredient_repository as cocktail_ingredient_repository
 
 
+# def save(cocktail_ingredient, cocktail):
+#     sql = "INSERT INTO cocktail_ingredient ( ingredient_id, cocktail_id ) VALUES ( %s, %s) RETURNING id"
+#     values = [cocktail_ingredient.id, cocktail.id]
+#     run_sql( sql, values )
+
+    
 def save(cocktail_ingredient, cocktail):
     sql = "INSERT INTO cocktail_ingredient ( ingredient_id, cocktail_id ) VALUES ( %s, %s) RETURNING id"
     values = [cocktail_ingredient, cocktail]
@@ -21,7 +28,8 @@ def select_all_by_cocktail_id(id):
         # select ingredient from ingredient repository
         ingredient = ingredient_repository.select(row['ingredient_id'])
         ingredients.append(ingredient)
-    return ingredients    
+    return ingredients 
+
 
  
 

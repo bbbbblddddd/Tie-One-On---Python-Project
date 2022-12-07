@@ -8,11 +8,22 @@ body {
     margin: 0px;
   }
 
-main {
-    display: inline-block;
-    overflow: hidden;
+#main {
+    display: flex;
     align-items: center;
   }
+
+.container {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Nanum Myeongjo', serif;
@@ -35,28 +46,16 @@ main {
     color: #8EE3EF;
   }
 
-  nav ul li {
-    font-family: 'Nanum Myeongjo', serif;
-    display: inline-block;
+  nav{
+    display: inline;
     justify-content: space-between;
-    align-items: center;
-    padding-inline: 30px;
-    list-style-type: none;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-   
   }
-
-
-  
-  main {
-    padding: 30px;
-    display: inline-block;
-    list-style-type: none;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+  nav ul li {
+    display: inline;
+    justify-content: space-between;
+  }
+   
+   
   }
   
   #content {
@@ -65,5 +64,16 @@ main {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+  }
+
+.input_form {
+
+  display: inline;
+  align-items: center;
+
+  }
+
+  .take_a_look{
+    display: flex;
   }
   

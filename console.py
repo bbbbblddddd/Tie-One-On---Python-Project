@@ -14,7 +14,7 @@ cocktail_ingredient_repository.delete_all()
 gimlet = Cocktail('Gimlet', 'A lime-heavy, classic gin cocktail with a rich naval history and a sharp kick.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
 cocktail_repository.save(gimlet)
 
-margerita = Cocktail('Margerita', 'Combining the tang of lime and the sweetness of orange liqueur with the distinctive strength of tequila, the classic Margarita strikes all of the right keys.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
+margerita = Cocktail('Margerita', 'Combining the tang of lime and the sweetness of orange liqueur with the distinctive strength of tequila.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
 cocktail_repository.save(margerita)
 
 manhattan = Cocktail('Manhattan', 'The Manhattan is a classic cocktail of choice for whiskey-lovers.', 'place all ingredients in a cocktail shaker with ice. shake, pour')

@@ -2,26 +2,27 @@
 
 {% block content %}
 <h1> Submit Your Own Cocktail Creation </h1>
+<div class="input_form">
+    <form action ="/submit" method="post">
+        <label for="cocktail_name"> Name of Cocktail </label>
+        <input type="text" name ="cocktail_name" id ="cocktail_name">
 
-<form action ="/submit" method="post">
-    <label for="cocktail_name"> Name of Cocktail </label>
-    <input type="text" name ="cocktail_name" id ="cocktail_name">
+        <label for="cocktail_description"> Description </label>
+        <input type="text" name ="cocktail_description" id ="cocktail_description">
 
-    <label for="cocktail_description"> Description </label>
-    <input type="text" name ="cocktail_description" id ="cocktail_description">
+        <label for="cocktail_instruction"> Instructions </label>
+        <input type="text" name ="cocktail_instruction" id ="cocktail_instruction">
 
-    <label for="cocktail_instruction"> Instructions </label>
-    <input type="text" name ="cocktail_instruction" id ="cocktail_instruction">
+        {% for ingredient in ingredients %}
 
-    {% for ingredient in ingredients %}
+        <label for="{{ingredient.name}}">{{ingredient.name}}</label>
+        <input type ="checkbox" value="{{ingredient.id}}" name="ingredients">
+            
+        {% endfor %}
 
-    <label for="{{ingredient.name}}">{{ingredient.name}}</label>
-    <input type ="checkbox" value="{{ingredient.id}}" name="ingredients">
-        
-    {% endfor %}
-
-<button type="submit">Submit Cocktail</button>
-</form>
+    <button type="submit">Submit Cocktail</button>
+    </form>
+</div>
 
 
 {% endblock content %}

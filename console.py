@@ -11,13 +11,13 @@ cocktail_repository.delete_all()
 ingredient_repository.delete_all()
 cocktail_ingredient_repository.delete_all()
 
-gimlet = Cocktail('Gimlet', 'A lime-heavy, classic gin cocktail with a rich naval history and a sharp kick.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
+gimlet = Cocktail('Gimlet', 'A lime-heavy, classic gin cocktail with a rich naval history and a sharp kick.', 'Add the 60 ml of gin, 30ml of lime juice and 30ml of sugar syrup to a shaker with ice and shake until well-chilled. Strain into a chilled cocktail glass or an rocks glass filled with fresh ice. Garnish with a lime wheel.')
 cocktail_repository.save(gimlet)
 
-margerita = Cocktail('Margerita', 'Combining the tang of lime and the sweetness of orange liqueur with the distinctive strength of tequila.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
+margerita = Cocktail('Margerita', 'Combining the tang of lime and the sweetness of orange liqueur with the distinctive strength of tequila.', 'Add 60ml of Tequila, 15ml of Triple Sec, 30ml of Lime Juice and 15ml of Sugar Syrup to a cocktail shaker filled with ice, and shake until well-chilled. Strain into a rocks glass over fresh ice. Garnish with a lime wheel and kosher salt rim or Tajin rim.')
 cocktail_repository.save(margerita)
 
-manhattan = Cocktail('Manhattan', 'The Manhattan is a classic cocktail of choice for whiskey-lovers.', 'place all ingredients in a cocktail shaker with ice. shake, pour')
+manhattan = Cocktail('Manhattan', 'The Manhattan is a classic cocktail of choice for whiskey-lovers.', 'Add the 60ml of Bourbon, 30ml Vermouth, and 2-3 dashes of Angustura Bitters into a mixing glass with ice and stir until well-chilled. Strain into a chilled Nick & Nora or Coupe glass. Garnish with a brandied cherry')
 cocktail_repository.save(manhattan)
 
 # could I rename these variable say... cocktail_gimlet, cocktail_margerita etc to make it more readable? Is this advised?

@@ -4,10 +4,10 @@
 
 <h1>Tie One on</h1>
 
-<h2> What Ya Got?</h2>
-<div>
-    <label for="ingredient">Choose an ingredient you want to work with; </label>
-    <select id="ingredients" name="ingredient.name">
+<h1> What Ya Got?</h1>
+    <div class="what_ya_got">
+        <label for="ingredient">Choose an ingredient you want to work with; </label>
+            <select id="ingredients" name="ingredient.name">
 
     {% for ingredient in ingredients %}
         <option value="'{{ingredient.id}}">{{ingredient.name}}</option>  

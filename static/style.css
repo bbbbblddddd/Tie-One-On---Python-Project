@@ -1,17 +1,17 @@
 body {
-    background-color: #6c937f;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #F6F4F3;
-    font-family: 'Nanum Myeongjo', serif;
-    padding: 0px;
-    margin: 0px;
-  }
+  background-color: #6c937f;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #F6F4F3;
+  font-family: 'Nanum Myeongjo', serif;
+  padding: 0px;
+  margin: 0px;
+}
 
 #main {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+}
 
 .container {
   max-width: 40rem;
@@ -20,60 +20,58 @@ body {
 
 }
 
-header {
-  display: flex;
-  align-items: center;
-}
   
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Nanum Myeongjo', serif;
-    margin: 0px;
-    padding: 0px;
+h1, h3, h4, h5, h6 {
+  font-family: 'Nanum Myeongjo', serif;
+  margin: 0px;
+  padding: 0px;
   }
   
-  h1 {
-    font-size: 8em;
-    color: #E1DABD;
-    margin-bottom: 20px;
-  }
-  
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  a:hover, a:active, a:focus {
-    color: #8EE3EF;
-  }
-
-  nav{
-    display: inline;
-    justify-content: space-between;
-  }
-  nav ul li {
-    display: inline;
-    justify-content: space-between;
-  }
-   
-   
-  }
-  
-  #content {
-    display: inline-block;
-    list-style-type: none;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-.input_form {
-
+h1 {
+  font-size: 3em;
+  color: #E1DABD;
+  margin-bottom: 40px;
+  margin-top: 40px;
   display: inline;
+  align-items: center;    
+}
+
+a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color:#E1DABD;
+}
+
+
+.nav_bar{
+  display: inline;
+  justify-content: space-between;
+  text-align: center;
   align-items: center;
+  width: 800px;
+}
 
-  }
+nav ul li{
+  list-style: none;
+}
 
-  .take_a_look{
-    display: flex;
-  }
-  
+
+#content {
+  display: inline-block;
+  list-style-type: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.take_a_look{
+  display: flex;
+}
+
+
+
+

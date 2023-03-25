@@ -15,17 +15,20 @@ body {
 
 .container {
   max-width: 40rem;
-  margin: 0 auto;
-  padding: 0 2rem;
+  margin: auto;
+    padding: 2rem;
 
 }
 
   
-h1, h3, h4, h5, h6 {
-  font-family: 'Nanum Myeongjo', serif;
-  margin: 0px;
-  padding: 0px;
-  }
+h3 {
+  font-size: 3em;
+  color: #E1DABD;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  display: inline;
+  align-items: center;
+}
   
 h1 {
   font-size: 3em;
@@ -42,10 +45,14 @@ a {
   text-decoration: none;
 }
 
+p {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
 a:hover, a:active, a:focus {
   color:#E1DABD;
 }
-
 
 .nav_bar{
   display: inline;
@@ -59,19 +66,117 @@ nav ul li{
   list-style: none;
 }
 
-
-#content {
-  display: inline-block;
-  list-style-type: none;
+#content .show {
+  display: inline;
+  align-items: center;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  text-decoration: none;
 }
+
 
 .take_a_look{
   display: flex;
 }
 
+/* .logo-container {
+  text-align: center;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.what_ya_got {
+  display: block;
+  background-color: #6c937f;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.what_ya_got .wtf label {
+  size: 800rem;
+}
+
+*/
+.logo-container {
+  display: block;
+  text-align: center;
+}
+
+/* Style for the logo image */
+#logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for the "What Ya Got?" section */
+.what_ya_got {
+
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Style for the heading */
+.what_ya_got h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 2rem;
+
+}
+
+/* Style for the "Choose an ingredient" label */
+.what_ya_got .wtf {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+/* Style for the dropdown menu */
+#ingredients {
+  max-width: 60%;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto;
+
+}
+
+/* Style for the "Show Me What I can make" button */
+.what_ya_got button {
+  background-color: #eae2c2;
+  color: #101010;
+
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.what_ya_got button:hover {
+  background-color: #959393;
+}
 
 

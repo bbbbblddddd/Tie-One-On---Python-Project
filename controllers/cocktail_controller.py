@@ -4,6 +4,7 @@ from models.cocktail import Cocktail
 import repositories.cocktail_repository as cocktail_repository
 import repositories.cocktail_ingredient_repository as cocktail_ingredient_repository
 import repositories.ingredient_repository as ingredient_repository
+import random
 
 
 cocktails_blueprint = Blueprint('cocktails', __name__)
@@ -44,11 +45,12 @@ def add_cocktail():
     return redirect('/cocktails')
 
 
-
-
-
-    
-    
+@cocktails_blueprint.route('/cocktails/random', methods=['GET'])
+def show_random_cocktail():
+    cocktails = cocktail_repository.select_all()
+    cocktail = random.choice(cocktails)
+    ingredients = ingredient_repository.select_by_cocktail(cocktail.id)
+    return render_template('cocktails/show.html', cocktail=cocktail, ingredients=ingredients)
 
 
 

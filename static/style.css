@@ -164,7 +164,7 @@ img {
 .what_ya_got button {
   background-color: #eae2c2;
   color: #101010;
-
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 16px;

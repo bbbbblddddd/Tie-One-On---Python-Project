@@ -2,19 +2,15 @@
 
 {% block content %}
 
-
-<h3>Ingredients</h3>
+<div>
+    {{cocktail.name}}
+    {{cocktail.instructions}}
+</div>
 
 {% for item in cocktail.ingredients %}
     <p>{{item.name}}</p>
 {% endfor %}
 
-
-<div class="show">
-
-    <h1>{{cocktail.name}}</h1>
-    <p>{{cocktail.instructions}}</p>
-</div>
-
+    
 {% endblock %}
 

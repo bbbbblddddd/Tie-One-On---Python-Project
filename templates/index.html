@@ -2,25 +2,20 @@
 
 {% block content %}
 
-<div class="logo-container">
-    <img src="/static/images/tielogo.png" alt="Tie One On Logo" id="logo">
-</div>
+<h1>Tie One on</h1>
 
-
+<h1> What Ya Got?</h1>
     <div class="what_ya_got">
-        <h1> What Ya Got?</h1>
-        <br />
-        <label class="wtf" for="ingredient">Choose an ingredient you want to work with</label>
-        <br />
+        <label for="ingredient">Choose an ingredient you want to work with; </label>
             <select id="ingredients" name="ingredient.name">
-                <br />
 
     {% for ingredient in ingredients %}
         <option value="'{{ingredient.id}}">{{ingredient.name}}</option>  
     {% endfor %}
     </select>
-    <br />
+
     <button type="submit">Show Me What I can make</button>
+
 </div>
 
 

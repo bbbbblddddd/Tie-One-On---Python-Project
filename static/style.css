@@ -15,20 +15,17 @@ body {
 
 .container {
   max-width: 40rem;
-  margin: auto;
-    padding: 2rem;
+  margin: 0 auto;
+  padding: 0 2rem;
 
 }
 
   
-h3 {
-  font-size: 3em;
-  color: #E1DABD;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  display: inline;
-  align-items: center;
-}
+h1, h3, h4, h5, h6 {
+  font-family: 'Nanum Myeongjo', serif;
+  margin: 0px;
+  padding: 0px;
+  }
   
 h1 {
   font-size: 3em;
@@ -45,14 +42,10 @@ a {
   text-decoration: none;
 }
 
-p {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-}
 a:hover, a:active, a:focus {
   color:#E1DABD;
 }
+
 
 .nav_bar{
   display: inline;
@@ -66,15 +59,14 @@ nav ul li{
   list-style: none;
 }
 
-#content .show {
-  display: inline;
-  align-items: center;
+
+#content {
+  display: inline-block;
+  list-style-type: none;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  text-decoration: none;
 }
-
 
 .take_a_look{
   display: flex;
@@ -164,7 +156,7 @@ img {
 .what_ya_got button {
   background-color: #eae2c2;
   color: #101010;
-  padding: 10px 20px;
+
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -175,8 +167,5 @@ img {
 
 }
 
-.what_ya_got button:hover {
-  background-color: #959393;
-}
 
 

@@ -52,13 +52,4 @@ def delete(id):
     run_sql(sql, values)
 
 
-def select_by_cocktail(cocktail_id):
-    query = 'SELECT * FROM ingredients WHERE cocktail_id = ?'
-    params = (cocktail_id,)
-    results = run_sql(query, params)
-
-    return [Ingredient(*row) for row in results]
-
-
-
 

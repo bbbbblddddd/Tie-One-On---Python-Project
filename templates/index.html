@@ -7,18 +7,19 @@
     <img src="/static/images/tielogo.png" alt="Tie One On Logo" id="logo">
 </div>
 
+<form action="/cocktails" method="GET">
     <div class="what_ya_got">
-        <label for="ingredient">Choose an ingredient you want to work with; </label>
-            <select id="ingredients" name="ingredient.name">
+        <label for="ingredient">Choose an ingredient you want to work with:</label>
+        <select id="ingredients" name="ingredient_id">
+            {% for ingredient in ingredients %}
+            <option value="{{ingredient.id}}">{{ingredient.name}}</option>
+            {% endfor %}
+            </select>
 
-    {% for ingredient in ingredients %}
-        <option value="'{{ingredient.id}}">{{ingredient.name}}</option>  
-    {% endfor %}
-    </select>
+        <button type="submit">Show Me What I can make</button>
+    </div>
+</form>
 
-    <button type="submit">Show Me What I can make</button>
-
-</div>
 
 
 </select>

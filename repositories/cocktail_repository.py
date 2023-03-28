@@ -59,3 +59,15 @@ def delete(id):
     sql = "DELETE FROM cocktails WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+
+def select_by_ingredient(ingredient):
+    cocktails = []
+    sql = "SELECT cocktails.id, cocktails.name, cocktails.description, cocktails.instructions FROM cocktails INNER JOIN cocktail_ingredient ON cocktails.id = cocktail_ingredient.cocktail_id INNER JOIN ingredients ON ingredients.id = cocktail_ingredient.ingredient_id WHERE ingredients.name = %s;"
+    values = [ingredient]
+    results = run_sql(sql, values)
+    for row in results:
+        cocktail = Cocktail(row['name'], row['description'],
+                            row['instructions'], row['id'])
+        cocktails.append(cocktail)
+    return cocktails

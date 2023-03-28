@@ -3,7 +3,7 @@
 {% block content %}
 <h1>{{ cocktail.name }}</h1>
 <p>{{ cocktail.description }}</p>
-<p>{{ cocktail.instructions }}</p>
+
 
 <h3>Ingredients:</h3>
 <ul>
@@ -11,4 +11,6 @@
     <li>{{ ingredient.name }}</li>
     {% endfor %}
 </ul>
+<p>{{ cocktail.instructions }}</p>
+
 {% endblock %}

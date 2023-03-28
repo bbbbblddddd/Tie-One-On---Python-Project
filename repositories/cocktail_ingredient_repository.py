@@ -8,30 +8,21 @@ import repositories.cocktail_repository as cocktail_repository
 import repositories.cocktail_ingredient_repository as cocktail_ingredient_repository
 
 
-# def save(cocktail_ingredient, cocktail):
-#     sql = "INSERT INTO cocktail_ingredient ( ingredient_id, cocktail_id ) VALUES ( %s, %s) RETURNING id"
-#     values = [cocktail_ingredient.id, cocktail.id]
-#     run_sql( sql, values )
-
-    
 def save(cocktail_ingredient, cocktail):
     sql = "INSERT INTO cocktail_ingredient ( ingredient_id, cocktail_id ) VALUES ( %s, %s) RETURNING id"
     values = [cocktail_ingredient, cocktail]
-    run_sql( sql, values )
-    
+    run_sql(sql, values)
+
+
 def select_all_by_cocktail_id(id):
     sql = "SELECT * FROM cocktail_ingredient WHERE cocktail_id = %s"
     values = [id]
     results = run_sql(sql, values)
     ingredients = []
     for row in results:
-        # select ingredient from ingredient repository
         ingredient = ingredient_repository.select(row['ingredient_id'])
         ingredients.append(ingredient)
-    return ingredients 
-
-
- 
+    return ingredients
 
 
 def select_all():
@@ -46,7 +37,7 @@ def select_all():
         cocktail_ingredient = (ingredient, cocktail, row['id'])
         cocktail_ingredients.append(cocktail_ingredient)
     return cocktail_ingredients
-# could have errors regarding syntax
+
 
 def cocktail(cocktail_ingredient):
     sql = "SELECT * FROM cocktails WHERE id = %s"

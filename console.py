@@ -63,11 +63,4 @@ cocktail_ingredient_repository.save(bourbon.id, manhattan.id)
 cocktail_ingredient_repository.save(vermouth.id, manhattan.id)
 cocktail_ingredient_repository.save(angustura_bitters.id, manhattan.id)
 
- 
-# is syntax above correct for joining tables together?
-
-# all_ingredients_for_gimlet = cocktail_repository.ingredients(gimlet)
-
 pdb.set_trace()
-
-# what is the purpose of set trace? and is it convention?

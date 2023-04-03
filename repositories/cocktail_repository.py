@@ -21,7 +21,7 @@ def select_all():
     sql = "SELECT * FROM cocktails"
     results = run_sql(sql)
     for row in results:
-        cocktail = Cocktail(row['name'], row['description'], row['instructions'], row['id'])
+        cocktail = Cocktail(row['name'], row['description'], row['instructions'], row[''] row['id'])
         cocktails.append(cocktail)
     return cocktails
 

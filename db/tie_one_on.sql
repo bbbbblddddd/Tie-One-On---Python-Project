@@ -6,7 +6,8 @@ CREATE TABLE cocktails (
     id SERIAL PRIMARY KEY,
     name VARCHAR (255),
     description TEXT,
-    instructions TEXT
+    instructions TEXT,
+    image_url TEXT
 );
 
 CREATE TABLE ingredients(

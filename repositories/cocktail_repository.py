@@ -8,8 +8,9 @@ import repositories.ingredient_repository as ingredient_repository
 
 
 def save(cocktail):
-    sql = "INSERT INTO cocktails(name, description, instructions) VALUES ( %s, %s, %s ) RETURNING id"
-    values = [cocktail.name, cocktail.description, cocktail.instructions]
+    sql = "INSERT INTO cocktails(name, description, instructions, image_url) VALUES ( %s, %s, %s, %s ) RETURNING id"
+    values = [cocktail.name, cocktail.description,
+              cocktail.instructions, cocktail.image_url]
     results = run_sql( sql, values )
     cocktail.id = results[0]['id']
     return cocktail
@@ -36,7 +37,8 @@ def select(id):
     #     found_ingredient = ingredient_repository.select(item.ingredient_id)
     #     ingredient_instances.append(found_ingredient)
     if result is not None:
-        cocktail = Cocktail(result['name'], result ['description'], result['instructions'], result['id'])
+        cocktail = Cocktail(result['name'], result['description'],
+                            result['instructions'], result['image_url'], result['id'])
     cocktail.ingredients = ingredients
     return cocktail
 
@@ -63,11 +65,11 @@ def delete(id):
 
 def select_by_ingredient(ingredient):
     cocktails = []
-    sql = "SELECT cocktails.id, cocktails.name, cocktails.description, cocktails.instructions FROM cocktails INNER JOIN cocktail_ingredient ON cocktails.id = cocktail_ingredient.cocktail_id INNER JOIN ingredients ON ingredients.id = cocktail_ingredient.ingredient_id WHERE ingredients.name = %s;"
+    sql = "SELECT cocktails.id, cocktails.name, cocktails.description, cocktails.instructions, cocktail.image_url FROM cocktails INNER JOIN cocktail_ingredient ON cocktails.id = cocktail_ingredient.cocktail_id INNER JOIN ingredients ON ingredients.id = cocktail_ingredient.ingredient_id WHERE ingredients.name = %s;"
     values = [ingredient]
     results = run_sql(sql, values)
     for row in results:
         cocktail = Cocktail(row['name'], row['description'],
-                            row['instructions'], row['id'])
+                            row['instructions'], row['image_url'], row['id'])
         cocktails.append(cocktail)
     return cocktails

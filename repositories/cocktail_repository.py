@@ -21,7 +21,8 @@ def select_all():
     sql = "SELECT * FROM cocktails"
     results = run_sql(sql)
     for row in results:
-        cocktail = Cocktail(row['name'], row['description'], row['instructions'], row[''] row['id'])
+        cocktail = Cocktail(row['name'], row['description'],
+                            row['instructions'], row['image_url'], row['id'])
         cocktails.append(cocktail)
     return cocktails
 
@@ -65,7 +66,7 @@ def delete(id):
 
 def select_by_ingredient(ingredient):
     cocktails = []
-    sql = "SELECT cocktails.id, cocktails.name, cocktails.description, cocktails.instructions, cocktail.image_url FROM cocktails INNER JOIN cocktail_ingredient ON cocktails.id = cocktail_ingredient.cocktail_id INNER JOIN ingredients ON ingredients.id = cocktail_ingredient.ingredient_id WHERE ingredients.name = %s;"
+    sql = "SELECT cocktails.id, cocktails.name, cocktails.description, cocktails.instructions, cocktails.image_url FROM cocktails INNER JOIN cocktail_ingredient ON cocktails.id = cocktail_ingredient.cocktail_id INNER JOIN ingredients ON ingredients.id = cocktail_ingredient.ingredient_id WHERE ingredients.name = %s;"
     values = [ingredient]
     results = run_sql(sql, values)
     for row in results:

@@ -5,8 +5,9 @@
 <div>
     {{cocktail.name}}
     {{cocktail.instructions}}
-    {{cocktail.image_url}}
 </div>
+
+<img src="{{cocktail.image_url}}" referrerpolicy="no-referrer" />
 
 {% for item in cocktail.ingredients %}
     <p>{{item.name}}</p>

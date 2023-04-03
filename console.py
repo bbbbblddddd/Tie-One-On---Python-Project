@@ -12,7 +12,7 @@ ingredient_repository.delete_all()
 cocktail_ingredient_repository.delete_all()
 
 gimlet = Cocktail('Gimlet', 'A lime-heavy, classic gin cocktail with a rich naval history and a sharp kick.',
-                  'Add the 60 ml of gin, 30ml of lime juice and 30ml of sugar syrup to a shaker with ice and shake until well-chilled. Strain into a chilled cocktail glass or an rocks glass filled with fresh ice. Garnish with a lime wheel.', 'https://imgur.com/lIekaw4')
+                  'Add the 60 ml of gin, 30ml of lime juice and 30ml of sugar syrup to a shaker with ice and shake until well-chilled. Strain into a chilled cocktail glass or an rocks glass filled with fresh ice. Garnish with a lime wheel.', 'https://i.imgur.com/lIekaw4.jpg')
 cocktail_repository.save(gimlet)
 
 margerita = Cocktail('Margerita', 'Combining the tang of lime and the sweetness of orange liqueur with the distinctive strength of tequila.', 'Add 60ml of Tequila, 15ml of Triple Sec, 30ml of Lime Juice and 15ml of Sugar Syrup to a cocktail shaker filled with ice, and shake until well-chilled. Strain into a rocks glass over fresh ice. Garnish with a lime wheel and kosher salt rim or Tajin rim.')

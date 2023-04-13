@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div>
-    {{cocktail.name}}
-    {{cocktail.instructions}}
+<div class="cocktail-details">
+    <div class="cocktail-image2">
+        <img src="{{cocktail.image_url}}" referrerpolicy="no-referrer" />
 </div>
-
-<img src="{{cocktail.image_url}}" referrerpolicy="no-referrer" />
-
-{% for item in cocktail.ingredients %}
+<div class="cocktail-instructions">
+    <h1>{{ cocktail.name }}</h1>
+    <p>{{ cocktail.description }}</p>
+    <h1>Ingredients</h1>
+    {% for item in cocktail.ingredients %}
     <p>{{item.name}}</p>
-{% endfor %}
+    {% endfor %}
+    <h1>Recipe</h1>
+    <p>{{ cocktail.instructions }}</p>
+    </div>
+    </div>
+    {% endblock %}
 
-    
-{% endblock %}
+
 

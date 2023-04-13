@@ -9,14 +9,16 @@
 
 <form action="/cocktails" method="GET">
     <div class="what_ya_got">
-        <label for="ingredient">Choose an ingredient you want to work with:</label>
+        <h1>Cocktail Generator</h1>
+        <p for="ingredient">Choose an ingredient you want to use</p>
         <select id="ingredients" name="ingredient_id">
             {% for ingredient in ingredients %}
             <option value="{{ingredient.id}}">{{ingredient.name}}</option>
             {% endfor %}
             </select>
+            <br />
 
-        <button type="submit">Show Me What I can make</button>
+        <button type="submit">What Can I Make?</button>
     </div>
 </form>
 

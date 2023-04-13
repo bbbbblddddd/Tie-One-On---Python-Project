@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ cocktail.name }}</h1>
-<p>{{ cocktail.description }}</p>
+<div class="page-container">
+    <div class="cocktail-details">
+        <img class="cocktail-image" src="{{cocktail.image_url}}" referrerpolicy="no-referrer" />
+        <div>
+            <h1>{{ cocktail.name }}</h1>
+            <p>{{ cocktail.description }}</p>
+            <h1>Ingredients</h1>
+            <ul class="ingredients-list">
+                {% for ingredient in ingredients %}
+                <p>{{ ingredient.name }}</p>
+                {% endfor %}
+                </ul>
+            <h1>Recipe</h1>
+            <p>{{ cocktail.instructions }}</p>
 
-
-<h3>Ingredients:</h3>
-<ul>
-    {% for ingredient in ingredients %}
-    <li>{{ ingredient.name }}</li>
-    {% endfor %}
-</ul>
-<p>{{ cocktail.instructions }}</p>
-
+        </div>
+        </div>
+        </div>
 {% endblock %}

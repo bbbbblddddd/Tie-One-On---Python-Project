@@ -8,32 +8,42 @@ body {
   margin: 0px;
 }
 
-#main {
-  display: flex;
-  align-items: center;
-}
-
-.container {
+/* .container {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 0rem;
+  }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
-}
-
-  
-h1, h3, h4, h5, h6 {
+h1,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Nanum Myeongjo', serif;
   margin: 0px;
   padding: 0px;
-  }
-  
+}
 h1 {
   font-size: 3em;
   color: #E1DABD;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  display: inline;
-  align-items: center;    
+  margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  h6 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+  
+  }
+  
+  p {
+    text-align: center;
+    font-size: 1.25rem;
 }
 
 a {
@@ -42,20 +52,23 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:active, a:focus {
-  color:#E1DABD;
+a:hover,
+a:active,
+a:focus {
+  color: #E1DABD;
 }
 
 
-.nav_bar{
-  display: inline;
-  justify-content: space-between;
+.nav_bar {
+  display: block;
+  margin: 0 auto;
   text-align: center;
   align-items: center;
-  width: 800px;
+  width: 700px;
+    padding-right: 2rem;
 }
 
-nav ul li{
+nav ul li {
   list-style: none;
 }
 
@@ -68,34 +81,10 @@ nav ul li{
   margin-right: auto;
 }
 
-.take_a_look{
+.take_a_look {
   display: flex;
 }
 
-/* .logo-container {
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  align-items: center;
-}
-
-.what_ya_got {
-  display: block;
-  background-color: #6c937f;
-  padding: 10px;
-  align-items: center;
-  text-align: center;
-  padding-top: 4rem;
-}
-
-.what_ya_got .wtf label {
-  size: 800rem;
-}
-
-*/
 .logo-container {
   display: block;
   text-align: center;
@@ -103,7 +92,7 @@ img {
 
 /* Style for the logo image */
 #logo {
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
 }
 
@@ -164,8 +153,208 @@ img {
   transition: background-color 0.3s ease;
   display: block;
   margin: 0 auto;
+}
 
+.hello li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.cocktail-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* INPUT FORM WHEN SUBMITTING OWN RECIPE */
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+  padding: .5rem;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  width: 40%;
+  max-width: 30%;
+  display: block;
+  margin: 0 auto;
+
+  /* Optional, to limit the input field width */
+}
+
+input[type="text"]:first-child {
+  margin-top: 3rem;
+}
+
+button[type="submit"] {
+
+  animation: bouncy 5s infinite linear;
+  position: relative;
+  padding: .5rem;
+  background-color: #eae2c2;
+  color: #101010;
+
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+@keyframes bouncy {
+  0% {
+    top: 0em;
+  }
+
+  40% {
+    top: 0em;
+  }
+
+  43% {
+    top: -0.9em;
+  }
+
+  46% {
+    top: 0em;
+  }
+
+  48% {
+    top: -0.4em;
+  }
+
+  50% {
+    top: 0em;
+  }
+
+  100% {
+    top: 0em;
+  }
+}
+
+button[type="submit"]:hover {
+  background-color: #c0baa2;
+}
+
+@media screen and (max-width: 768px) {
+  .input-form {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  input[type="text"] {
+    width: 60%;
+  }
+}
+
+.ingredient-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 0.5rem;
+  align-items: center;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.ingredient-container label {
+  display: flex;
+  align-items: center;
+  width: 33.33%;
+  padding: 0;
+  margin: 0rem 1rem 0rem 2rem;
+}
+
+.ingredient-container input[type="checkbox"] {
+ display: flex;
+  align-items: center;
+  margin-bottom: 0rem;
+  width: 33.33%;
+  padding: 0;
 }
 
 
 
+
+
+
+
+
+
+/* show cocktail page */
+
+.cocktail-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cocktail-image2 {
+  flex: 6;
+  margin-right: 20px;
+  max-width: 400px;
+  padding-right: 2rem;
+  align-self: flex-start;
+}
+
+.cocktail-image2 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cocktail-instructions {
+  flex: 4;
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+.page-container {
+  margin: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.cocktail-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cocktail-image {
+  max-width: 400px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.ingredients-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ingredients-list li {
+  margin-bottom: 5px;
+}
+
+.cocktail-instructions {
+  max-width: 100%;
+}

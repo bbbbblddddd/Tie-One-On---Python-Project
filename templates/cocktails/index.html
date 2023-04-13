@@ -2,22 +2,19 @@
 
 {% block content %}
 
-<h1>Cocktails List</h1>
-
 {% for cocktail in cocktails %}
 
 <div class="hello">
     <li>
-        <ul>
-            <h1> {{cocktail.name}}</h1>
-            <p>{{cocktail.description}}</p>
-            <li><a href="/cocktails/{{cocktail.id}}"> Take a Closer Look</a></li>        
-            <form class="delete-form" action="/cocktails/{{cocktail.id}}/delete" method="post">
+        <h1>{{cocktail.name}}</h1>
+        <p>{{cocktail.description}}</p>
+        <li><a href="/cocktails/{{cocktail.id}}">Take a Closer Look</a></li>
+        <form class="delete-form" action="/cocktails/{{cocktail.id}}/delete" method="post">
             <input type="submit" value="delete">
-            </form>   
-        </ul>
+        </form>
     </li>
 </div>
+
 
 
 {% endfor %}

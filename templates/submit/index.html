@@ -3,24 +3,32 @@
 {% block content %}
 <h1> Submit Your Own Recipe </h1>
 <div class="input-form">
-    <form action ="/submit" method="post">
-        <label for="cocktail_name"> Name of Cocktail </label>
-        <input type="text" name ="cocktail_name" id ="cocktail_name">
+    <form action="/submit" method="post">
+        <p for="cocktail_name"> Name of Cocktail </p>
+        <input type="text" name="cocktail_name" id="cocktail_name">
 
-        <label for="cocktail_description"> Description </label>
-        <input type="text" name ="cocktail_description" id ="cocktail_description">
+        <p for="cocktail_description"> Description </p>
+        <input type="text" name="cocktail_description" id="cocktail_description">
 
-        <label for="cocktail_instruction"> Instructions </label>
-        <input type="text" name ="cocktail_instruction" id ="cocktail_instruction">
+    <p for="cocktail_instruction"> Instructions </p>
+    <input type="text" name="cocktail_instruction" id="cocktail_instruction">
+    <br />
 
-        {% for ingredient in ingredients %}
+        <h1>Add Ingredients</h1>
+        <div class="ingredient-container">
+            {% for ingredient in ingredients %}
+            <label>
+                <input type="checkbox" value="{{ingredient.id}}" name="ingredients">
+                {{ingredient.name}}
+            </label>
+            {% endfor %}
+            </div>
+            <br />
+        
 
-        <label for="{{ingredient.name}}">{{ingredient.name}}</label>
-        <input type ="checkbox" value="{{ingredient.id}}" name="ingredients">
-            
-        {% endfor %}
 
-    <button type="submit">Submit Cocktail</button>
+        <button type="submit">Submit Cocktail</button>
+        <br/>
     </form>
 </div>
 

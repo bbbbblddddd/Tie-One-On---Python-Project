@@ -2,21 +2,22 @@
 
 {% block content %}
 
-<h2> Add an ingredient to our database</h2>
-
+<h1> Add an ingredient</h1>
+<br />
 <div class="what_we_got">
-    <label for="ingredient"> What we've got </label>
+    <h6> What we've got </h6>
     <select id="ingredients" name="ingredient.name">
-
+<br />
     {% for ingredient in ingredients %}
         <option value="'{{ingredient.id}}">{{ingredient.name}}</option>  
     {% endfor %}
     </select>
 </div>
-
+<br />
 <form action ="/add_ingredient" method="post">
-    <label for="name_field"> Name of Ingredient </label>
-    <input type="text" name ="ingredient_name" id ="name_field">
+    <h6> Name of Ingredient </h6>
+    <input type="text" name="ingredient_name" id="ingredient_name_field" class="ingredient_name_field">
+    <br />
 <button type="submit">Add Ingredient</button>
 </form>
 

@@ -2,21 +2,111 @@
 
 {% block content %}
 
-{% for cocktail in cocktails %}
+<h1>Cocktails List</h1>
+<br />
 
-<div class="hello">
-    <li>
-        <h1>{{cocktail.name}}</h1>
-        <p>{{cocktail.description}}</p>
-        <li><a href="/cocktails/{{cocktail.id}}">Take a Closer Look</a></li>
-        <form class="delete-form" action="/cocktails/{{cocktail.id}}/delete" method="post">
-            <input type="submit" value="delete">
-        </form>
-    </li>
+<div class="cocktails-container">
+
+    {% for cocktail in cocktails %}
+
+    <div class="cocktail-card">
+        <div class="cocktail-info">
+            <h1>{{cocktail.name}}</h1>
+            <div class="image-container">
+                <a href="/cocktails/{{cocktail.id}}">
+                    <img class="cocktail-image" src="{{cocktail.image_url}}" referrerpolicy="no-referrer" />
+                </a>
+            </div>
+            <h5>{{cocktail.description}}</h5>
+        </div>
+        <!-- <div class="cocktail-buttons">
+            <form class="delete-form" action="/cocktails/{{cocktail.id}}/delete" method="post">
+                <input type="submit" value="Delete">
+            </form>
+        </div> -->
+    </div>
+    
+
+    {% endfor %}
+
 </div>
 
 
+<style>
+    .cocktails-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 0 40px;
+      }
 
-{% endfor %}
-    
+
+
+    .cocktail-card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 60px;
+    }
+
+    .cocktail-info h1 {
+        margin: 0;
+    }
+
+    .cocktail-info p {
+        margin: 10px 0;
+    }
+
+    .cocktail-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    .cocktail-buttons form {
+        margin: 0;
+    }
+
+    .cocktail-buttons form input {
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .cocktail-buttons form input:hover {
+        background-color: #d32f2f;
+    }
+
+    .hello {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .hello li {
+        width: 33.33%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: auto;
+    }
+
+    .cocktail-image {
+        max-width: 100%;
+        max-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
 {% endblock content%}

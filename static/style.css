@@ -8,6 +8,21 @@ body {
   margin: 0px;
 }
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../static/fonts/Soligant.ttf')
+}
+
+h5 {
+  font-family: 'CustomFont', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
 /* .container {
   max-width: 40rem;
   margin: 0 auto;
@@ -18,19 +33,21 @@ body {
 h1,
 h3,
 h4,
-h5,
 h6 {
   font-family: 'Nanum Myeongjo', serif;
   margin: 0px;
   padding: 0px;
 }
 h1 {
+  font-family: 'CustomFont', sans-serif;
   font-size: 3em;
   color: #E1DABD;
   margin-bottom: 10px;
     margin-top: 10px;
     text-align: center;
   }
+
+ 
   
   h6 {
     font-family: 'Nanum Myeongjo', serif;
@@ -38,12 +55,14 @@ h1 {
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: center;
-  
+
   }
   
   p {
+    font-family: 'CustomFont', sans-serif;
     text-align: center;
     font-size: 1.25rem;
+    padding: 0;
 }
 
 a {
@@ -65,7 +84,7 @@ a:focus {
   text-align: center;
   align-items: center;
   width: 700px;
-    padding-right: 2rem;
+  padding-right: 2rem;
 }
 
 nav ul li {
@@ -82,7 +101,13 @@ nav ul li {
 }
 
 .take_a_look {
-  display: flex;
+  text-align: center;
+}
+
+.take_a_look > * {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: middle;
 }
 
 .logo-container {
@@ -282,6 +307,13 @@ button[type="submit"]:hover {
   padding: 0;
 }
 
+.cocktail-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
 
 
 
@@ -358,3 +390,34 @@ button[type="submit"]:hover {
 .cocktail-instructions {
   max-width: 100%;
 }
+
+.cocktail-buttons {
+  text-align: center;
+}
+.cocktail-buttons {
+  text-align: center;
+}
+
+.delete-form {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.delete-form input[type="submit"] {
+  animation: bouncy 5s infinite linear;
+  position: relative;
+  padding: .5rem;
+  background-color: #eae2c2;
+  color: #101010;
+
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+/* ALL COCKTAILS PAGE STYLING */

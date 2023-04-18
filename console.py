@@ -44,8 +44,13 @@ cocktail_repository.save(whisky_sour)
 twelvemile = Cocktail('12 Mile Limit', 'A grenadine heavy, prohibition era sipper using equal parts of each ingredient', 'Combine 30ml of Bourbon, Cognac, Grenadine and Lemon Juice with ice to a cocktail shaker. Shake until chilled and strain ito a coupe glass', 'https://i.imgur.com/0sBTbRd.png')
 cocktail_repository.save(twelvemile)
 
-silverlining = Cocktail ('Silver Lining', 'A rye fizz created at Milk and Honey in New York using spanish liqeur Licor 43', 'Combine 45ml Bourbon, 22ml Lemon Juice, 22ml Licor 43 and one egg white in a shaker. Dry shake to emulsify egg white, then add ice and shake until well chilled. Strain into a highball glass with ice then top with soda water. Let stand for a moment so the foam settles, then add more soda to raise the froth above the rim of the glass', 'https://i.imgur.com/yWsh521.png')
+silverlining = Cocktail ('Silver Lining', 'A rye fizz created at Milk and Honey in New York using spanish liqeur Licor 43', 'Combine 45ml Bourbon, 22ml Lemon Juice, 22ml Licor 43 and one egg white in a shaker. Dry shake to emulsify egg white, then add ice and shake until well chilled. Strain into a highball glass with ice then top with soda water. Let stand for a moment so the foam settles, then add more soda to raise the froth above the rim of the glass', 'https://i.imgur.com/xiA4BSO.png')
 cocktail_repository.save(silverlining)
+
+marmmarg = Cocktail ('Marmalade Marg', 'A riff on the classic Margarita with the added bitterness of Aperol', 'Combine 50ml Tequila, 25ml Aperol, 25ml Lime Juice and 12.5ml Agave Syrup to a shaker with ice. Shake until well chillled then strain into a rocks glass with ice or a chilled coupe glass.', 'https://i.imgur.com/KwgLo41.png')
+cocktail_repository.save(marmmarg)
+
+
 
 
 
@@ -175,6 +180,14 @@ cocktail_ingredient_repository.save(bourbon.id, silverlining.id)
 cocktail_ingredient_repository.save(lemon_juice.id, silverlining.id)
 cocktail_ingredient_repository.save(licor43.id, silverlining.id)
 cocktail_ingredient_repository.save(soda.id, silverlining.id)
+
+cocktail_ingredient_repository.save(tequila.id, marmmarg.id)
+cocktail_ingredient_repository.save(aperol.id, marmmarg.id)
+cocktail_ingredient_repository.save(lime_juice.id, marmmarg.id)
+cocktail_ingredient_repository.save(agave.id, marmmarg.id)
+
+
+
 
 
 

@@ -6,16 +6,19 @@
         <img class="cocktail-image" src="{{cocktail.image_url}}" referrerpolicy="no-referrer" />
         <div>
             <h1>{{ cocktail.name }}</h1>
-            <p>{{ cocktail.description }}</p>
+            <h3>{{ cocktail.description }}</h3>
             <h1>Ingredients</h1>
             <ul class="ingredients-list">
                 {% for ingredient in ingredients %}
-                <p>{{ ingredient.name }}</p>
+                <h3>{{ ingredient.name }}</h3>
                 {% endfor %}
                 </ul>
             <h1>Recipe</h1>
-            <p>{{ cocktail.instructions }}</p>
-
+            <h3>{{ cocktail.instructions }}</h3>
+            <div class="cocktail-buttons">
+                <form class="delete-form" action="/cocktails/{{cocktail.id}}/delete" method="post">
+                    <input type="submit" value="Delete">
+                </form>
         </div>
         </div>
         </div>

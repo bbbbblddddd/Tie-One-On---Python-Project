@@ -13,14 +13,19 @@ body {
   src: url('../static/fonts/Soligant.ttf')
 }
 
+@font-face {
+  font-family: 'CustomFont2';
+  src: url('../static/fonts/Calstavier Free.ttf')
+}
+
 h5 {
   font-family: 'CustomFont', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
 }
+
 
 
 /* .container {
@@ -31,38 +36,44 @@ h5 {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
 h1,
-h3,
 h4,
 h6 {
   font-family: 'Nanum Myeongjo', serif;
   margin: 0px;
   padding: 0px;
 }
+
 h1 {
   font-family: 'CustomFont', sans-serif;
-  font-size: 3em;
+  font-size: 2.5rem;
   color: #E1DABD;
   margin-bottom: 10px;
-    margin-top: 10px;
-    text-align: center;
-  }
+  margin-top: 10px;
+  text-align: center;
+}
 
- 
-  
-  h6 {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-align: center;
+h3 {
+  font-family: 'Nanum Myeongjo', serif;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 0;
+}
 
-  }
-  
-  p {
-    font-family: 'CustomFont', sans-serif;
-    text-align: center;
-    font-size: 1.25rem;
-    padding: 0;
+
+h6 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+p {
+  font-family: 'CustomFont', sans-serif;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 0;
 }
 
 a {
@@ -104,7 +115,7 @@ nav ul li {
   text-align: center;
 }
 
-.take_a_look > * {
+.take_a_look>* {
   display: inline-block;
   margin: 0 10px;
   vertical-align: middle;
@@ -300,7 +311,7 @@ button[type="submit"]:hover {
 }
 
 .ingredient-container input[type="checkbox"] {
- display: flex;
+  display: flex;
   align-items: center;
   margin-bottom: 0rem;
   width: 33.33%;
@@ -394,6 +405,7 @@ button[type="submit"]:hover {
 .cocktail-buttons {
   text-align: center;
 }
+
 .cocktail-buttons {
   text-align: center;
 }
@@ -401,6 +413,7 @@ button[type="submit"]:hover {
 .delete-form {
   display: inline-block;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .delete-form input[type="submit"] {
